@@ -1,0 +1,5 @@
+pdf/
+product/
+.env
+node_modules/
+.vercel/

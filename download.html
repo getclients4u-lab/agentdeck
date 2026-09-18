@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentDeck™ — Your Downloads</title>
+<style>
+  :root { --bg:#0a0d14; --panel:#111726; --line:#22304a; --txt:#e8eefb; --dim:#8b9cbb; --accent:#5b8def; --good:#4ade80; --bad:#f87171; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:'Segoe UI',system-ui,sans-serif; min-height:100vh; }
+  .wrap { max-width:800px; margin:0 auto; padding:40px 20px 80px; }
+  .logo { font-size:22px; font-weight:700; margin-bottom:6px; }
+  .logo span { color:var(--accent); }
+  .sub { color:var(--dim); font-size:14px; margin-bottom:32px; }
+  .gate { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:28px; margin-bottom:28px; }
+  .gate h2 { font-size:18px; margin-bottom:8px; }
+  .gate p { color:var(--dim); font-size:13px; margin-bottom:18px; }
+  input { width:100%; background:var(--bg); border:1px solid var(--line); color:var(--txt); padding:12px 14px; border-radius:8px; font-size:15px; margin-bottom:12px; }
+  .btn { background:var(--accent); color:#06221a; border:none; padding:12px 20px; border-radius:8px; font-weight:700; font-size:14px; cursor:pointer; width:100%; }
+  .btn:hover { filter:brightness(1.1); }
+  .err { color:var(--bad); font-size:13px; margin-top:10px; min-height:18px; }
+  .locked { display:none; }
+  .files { display:grid; gap:12px; }
+  .file { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:14px; }
+  .file h3 { font-size:15px; margin-bottom:3px; }
+  .file p { color:var(--dim); font-size:12.5px; line-height:1.45; }
+  .file .btn { width:auto; padding:9px 16px; font-size:12.5px; flex-shrink:0; }
+  .badge { display:inline-block; background:rgba(74,222,128,0.12); color:var(--good); font-size:11px; padding:2px 10px; border-radius:12px; font-weight:600; margin-bottom:6px; }
+  footer { margin-top:40px; text-align:center; color:var(--dim); font-size:12px; }
+  .start { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; margin-bottom:16px; }
+  .start h3 { font-size:16px; margin-bottom:8px; }
+  .start ol { padding-left:20px; color:var(--dim); font-size:13.5px; line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">🃏 Agent<span>Deck</span>™</div>
+  <div class="sub">The AgentDeck™ Launch System — your member downloads</div>
+
+  <div id="gateBox" class="gate">
+    <h2>🔐 Unlock your downloads</h2>
+    <p>Enter the email you purchased with and your personal access code (sent in your order confirmation email).</p>
+    <input id="email" type="email" placeholder="you@email.com" autocomplete="email">
+    <input id="code" type="text" placeholder="AD-XXXXX-XXXXX" autocomplete="off">
+    <button class="btn" onclick="unlock()">Unlock →</button>
+    <div class="err" id="err"></div>
+  </div>
+
+  <div id="memberArea" class="locked">
+    <div class="start">
+      <span class="badge">✅ Unlocked</span>
+      <h3>Start here — your 4-layer build</h3>
+      <ol>
+        <li><b>READ (10 min):</b> The AgentDeck System — the 4-layer model and the 7-day build plan</li>
+        <li><b>PICK (60 min):</b> score your jobs with the Job Scorecard and choose ONE job</li>
+        <li><b>BUILD (weekend):</b> write the Prompt Contract, assemble the Grounding Pack, wire the Trigger</li>
+        <li><b>SHIP (same day):</b> set guardrails, run the 20 adversarial tests, deploy in draft mode</li>
+      </ol>
+    </div>
+    <div class="files">
+      <div class="file">
+        <div><h3>🃏 1. The AgentDeck System</h3><p>Your first 24/7 AI agent in one weekend — the 4-layer model, the 7-day build, and the economics.</p></div>
+        <button class="btn" onclick="dl('01-agentdeck-system.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🎯 2. The Job Scorecard</h3><p>Pick the ONE job your agent does — score 10 candidates on 5 axes and pass the 3 hard filters.</p></div>
+        <button class="btn" onclick="dl('02-job-scorecard.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🧠 3. The Grounding Pack</h3><p>Give your agent its brain — the 6 files every agent needs + the "citation or silence" rule.</p></div>
+        <button class="btn" onclick="dl('03-grounding-pack.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>📜 4. The Prompt Contract</h3><p>Write a brain that doesn't drift + the 20-attack Adversarial Test Sheet. Ship only at 20/20.</p></div>
+        <button class="btn" onclick="dl('04-prompt-contract.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>⏰ 5. The Trigger Map</h3><p>Make your agent wake up on its own — cron, webhook, email, chat + the dead-man's-switch heartbeat.</p></div>
+        <button class="btn" onclick="dl('05-trigger-map.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🛡️ 6. Guardrails &amp; Safeguards</h3><p>Sleep without fear — spend caps, approve-first mode, kill switch, audit log, and the risk ladder.</p></div>
+        <button class="btn" onclick="dl('06-guardrails.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>📊 7. The Receipt Tracker</h3><p>Prove it ran, then improve it — run log, weekly scorecard, the 10-run trust gate, incident log.</p></div>
+        <button class="btn" onclick="dl('07-receipt-tracker.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🧰 8. The AgentDeck Playbook</h3><p>Templates, copy-paste scripts, the starter agent, the 30-day roadmap, and how to get your first client.</p></div>
+        <button class="btn" onclick="dl('08-agentdeck-playbook.pdf', this)">Download</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>AgentDeck™ · deploy your own AI agent · no code required</footer>
+</div>
+
+<script>
+function unlock() {
+  const email = document.getElementById('email').value.trim();
+  const code = document.getElementById('code').value.trim();
+  const err = document.getElementById('err');
+  if (!email || !code) { err.textContent = 'Please enter both email and access code.'; return; }
+  fetch('/api/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, code }) })
+    .then(r => r.json())
+    .then(d => {
+      if (d.ok) {
+        sessionStorage.setItem('ad_email', email);
+        sessionStorage.setItem('ad_code', code);
+        document.getElementById('gateBox').style.display = 'none';
+        document.getElementById('memberArea').classList.remove('locked');
+        document.getElementById('memberArea').style.display = 'block';
+        err.textContent = '';
+      } else {
+        err.textContent = d.error || 'Access denied. Check your code and email.';
+      }
+    })
+    .catch(() => { err.textContent = 'Network error — try again.'; });
+}
+
+function dl(file, btn) {
+  const email = sessionStorage.getItem('ad_email');
+  const code = sessionStorage.getItem('ad_code');
+  if (!email || !code) { alert('Session expired — please unlock again.'); location.reload(); return; }
+  const orig = btn.textContent;
+  btn.textContent = '⏳ …';
+  btn.disabled = true;
+  fetch('/api/download', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, code, file }) })
+    .then(async r => {
+      if (!r.ok) { const d = await r.json().catch(() => ({})); throw new Error(d.error || 'Download failed (' + r.status + ')'); }
+      const blob = await r.blob();
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = file;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      btn.textContent = '✅ Sent';
+    })
+    .catch(e => { alert(e.message); btn.textContent = orig; })
+    .finally(() => { btn.disabled = false; setTimeout(() => { if (btn.textContent === '✅ Sent') btn.textContent = orig; }, 2500); });
+}
+
+// auto-unlock if already verified this session
+const em = sessionStorage.getItem('ad_email');
+const ec = sessionStorage.getItem('ad_code');
+if (em && ec) {
+  fetch('/api/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: em, code: ec }) })
+    .then(r => r.json())
+    .then(d => { if (d.ok) { document.getElementById('gateBox').style.display = 'none'; document.getElementById('memberArea').classList.remove('locked'); document.getElementById('memberArea').style.display = 'block'; } });
+}
+document.getElementById('code').addEventListener('keydown', (e) => { if (e.key === 'Enter') unlock(); });
+</script>
+</body>
+</html>

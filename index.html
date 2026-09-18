@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentDeck™ — Deploy Your Own 24/7 AI Agent (No Code) in One Weekend</title>
+<meta name="description" content="The AgentDeck™ Launch System: build, ground, guardrail and ship your own 24/7 AI agent in one weekend — no code, no agency, no $2,000 invoice. 8-part system. $19 founder price.">
+<style>
+  :root{
+    --bg:#070a12; --bg2:#0b101c; --panel:#111726; --panel2:#141c2e;
+    --line:#22304a; --txt:#eaf0ff; --dim:#93a3c4; --accent:#5b8def; --accent2:#3b5bdb;
+    --good:#4ade80; --gold:#ffcb6b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.65;overflow-x:hidden;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px;}
+  .narrow{max-width:760px;margin:0 auto;padding:0 22px;}
+  section{padding:74px 0;}
+  h1,h2,h3{line-height:1.16;letter-spacing:-.02em;}
+  h2{font-size:2.15rem;margin-bottom:14px;}
+  h3{font-size:1.22rem;margin-bottom:8px;}
+  p{color:#c3cee6;}
+  a{color:var(--accent);}
+  .center{text-align:center;}
+  .eyebrow{display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);background:rgba(91,141,239,.12);border:1px solid rgba(91,141,239,.28);padding:7px 16px;border-radius:999px;margin-bottom:22px;}
+  .lead{font-size:1.12rem;color:#c3cee6;max-width:680px;margin:0 auto;}
+
+  /* HERO */
+  .hero{position:relative;padding:96px 0 84px;text-align:center;overflow:hidden;
+    background:radial-gradient(1100px 520px at 50% -8%,rgba(91,141,239,.22),transparent 62%),var(--bg);}
+  .hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(91,141,239,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(91,141,239,.05) 1px,transparent 1px);background-size:54px 54px;mask-image:radial-gradient(700px 420px at 50% 12%,#000,transparent 75%);pointer-events:none;}
+  .hero .wrap{position:relative;z-index:2;}
+  .hero h1{font-size:3.35rem;font-weight:800;max-width:940px;margin:0 auto 20px;}
+  .hero h1 .hl{background:linear-gradient(120deg,#5b8def,#8ab4ff 55%,#ffcb6b);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero h1 .strike{color:#5d6b8a;text-decoration:line-through;text-decoration-color:#f87171;text-decoration-thickness:3px;}
+  .hero .sub{font-size:1.22rem;color:#c3cee6;max-width:720px;margin:0 auto 34px;}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center;}
+  .btn{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#04102d;font-weight:800;font-size:1.05rem;padding:17px 38px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;box-shadow:0 14px 40px rgba(59,91,219,.42);transition:transform .15s,filter .15s;}
+  .btn:hover{transform:translateY(-2px);filter:brightness(1.08);}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:#c3cee6;box-shadow:none;font-weight:600;}
+  .micro{font-size:.85rem;color:var(--dim);margin-top:16px;}
+  .trustbar{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:40px;font-size:.86rem;color:var(--dim);}
+  .trustbar span{display:flex;align-items:center;gap:7px;}
+
+  /* CARDS */
+  .grid{display:grid;gap:18px;}
+  .g3{grid-template-columns:repeat(3,1fr);}
+  .g2{grid-template-columns:repeat(2,1fr);}
+  .g4{grid-template-columns:repeat(2,1fr);}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;}
+  .card .ic{font-size:1.9rem;margin-bottom:12px;display:block;}
+  .card p{font-size:.96rem;}
+  .stepnum{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:rgba(91,141,239,.14);border:1px solid rgba(91,141,239,.3);color:var(--accent);font-weight:800;margin-bottom:14px;}
+
+  /* PROOF */
+  .proofband{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;}
+  .stat .n{font-size:2.3rem;font-weight:800;color:var(--gold);}
+  .stat .l{font-size:.86rem;color:var(--dim);margin-top:4px;}
+
+  /* DELIVERABLES */
+  table{width:100%;border-collapse:collapse;font-size:.95rem;}
+  th{text-align:left;color:var(--dim);font-weight:700;padding:10px 8px;border-bottom:1px solid var(--line);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;}
+  td{padding:13px 8px;border-bottom:1px solid #182136;vertical-align:top;color:#c3cee6;}
+  td b{color:var(--txt);}
+
+  /* COMPARE */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+  .compare>div{padding:28px;}
+  .compare .them{background:#0c1220;}
+  .compare .us{background:linear-gradient(160deg,rgba(91,141,239,.12),rgba(91,141,239,.03));}
+  .compare h3{font-size:1.15rem;margin-bottom:16px;}
+  .compare ul{list-style:none;}
+  .compare li{padding:9px 0;border-bottom:1px dashed #1f2941;font-size:.94rem;color:#c3cee6;display:flex;gap:10px;}
+  .compare li:last-child{border-bottom:none;}
+  .them li:before{content:"✕";color:#f87171;font-weight:800;}
+  .us li:before{content:"✓";color:var(--good);font-weight:800;}
+
+  /* TESTIMONIAL */
+  .quote{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;}
+  .quote p{font-style:italic;color:#dbe4f6;margin-bottom:14px;}
+  .quote .who{font-size:.86rem;color:var(--dim);font-weight:600;}
+  .stars{color:var(--gold);margin-bottom:10px;letter-spacing:2px;}
+
+  /* FAQ */
+  details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:12px;}
+  details summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;color:var(--txt);}
+  details summary::-webkit-details-marker{display:none;}
+  details summary:before{content:"＋";color:var(--accent);font-weight:800;margin-right:12px;}
+  details[open] summary:before{content:"－";}
+  details p{margin-top:12px;font-size:.95rem;}
+
+  /* OFFER */
+  .offer{background:linear-gradient(165deg,#101828,#0a0f1c);border:1px solid rgba(91,141,239,.35);border-radius:22px;padding:44px 38px;text-align:center;box-shadow:0 30px 90px rgba(0,0,0,.5);}
+  .offer .price{font-size:4rem;font-weight:900;color:var(--gold);line-height:1;}
+  .offer .was{color:#5d6b8a;text-decoration:line-through;font-size:1.3rem;margin-right:12px;}
+  .offer .val{margin:22px auto;max-width:520px;text-align:left;font-size:.95rem;}
+  .offer .val div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #1f2941;color:#c3cee6;}
+  .offer .val div:last-child{border-bottom:none;font-weight:800;color:var(--gold);}
+  .guarantee{background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);border-radius:12px;padding:16px 20px;margin:22px auto;max-width:560px;font-size:.92rem;color:#c8f5da;}
+
+  .disclaimer{font-size:.8rem;color:#5d6b8a;text-align:center;max-width:760px;margin:0 auto;padding:0 22px 50px;}
+  footer{background:#05080f;border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--dim);font-size:.85rem;}
+  .sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(10,14,26,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:12px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px;z-index:50;}
+  .sticky .t{font-size:.9rem;color:#c3cee6;}
+  .sticky .t b{color:var(--gold);}
+  .sticky .btn{padding:12px 26px;font-size:.95rem;}
+  @media(max-width:820px){
+    .hero h1{font-size:2.25rem;} h2{font-size:1.7rem;}
+    .g3,.g2,.g4,.stats,.compare{grid-template-columns:1fr;}
+    .compare{border-radius:16px;}
+    section{padding:56px 0;}
+    .offer{padding:32px 22px;} .offer .price{font-size:3rem;}
+    .sticky .t{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">The 2026 AI-Agent Gold Rush Is Here</span>
+    <h1>Your Competitor Just Hired an AI That Never Sleeps.<br><span class="strike">Pay an agency $2,000.</span> <span class="hl">Build yours this weekend.</span></h1>
+    <p class="sub">The AgentDeck™ Launch System is the no-code, done-with-you blueprint for deploying your own <b>24/7 AI agent</b> — one that answers, drafts, books and reports while you sleep. 8 deliverables. One weekend. Live by Monday.</p>
+    <div class="cta-row">
+      <a class="btn" href="#offer" data-cta>Get The System — $19 →</a>
+      <a class="btn ghost" href="#inside">See what's inside</a>
+    </div>
+    <p class="micro">🔒 One-time payment · 60-day "Peace of Mind" guarantee · Instant access</p>
+    <div class="trustbar">
+      <span>🤖 No code required</span>
+      <span>⚡ Live in one weekend</span>
+      <span>💸 Runs for ~$5–40/mo</span>
+      <span>📦 8 real deliverables</span>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section>
+  <div class="narrow center">
+    <span class="eyebrow">The window is open — barely</span>
+    <h2>AI agents stopped being a demo. They're now a subscription your competitors already pay for.</h2>
+    <p class="lead">ElevenLabs sells an AI receptionist for $29/month. Mastercard hands AI agents virtual cards to buy on your behalf. Cisco runs agent armies at enterprise scale. Meanwhile, 90% of small businesses are still "waiting to figure out AI."</p>
+    <p class="lead" style="margin-top:20px;">Here's the part nobody tells you: <b>the tools are free or cheap. The <i>deployment</i> is what agencies charge $1,500–$5,000 for.</b> That deployment is a repeatable process. And it's yours to learn in a weekend.</p>
+  </div>
+</section>
+
+<!-- MECHANISM -->
+<section style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:44px;">
+      <span class="eyebrow">The Mechanism</span>
+      <h2>The 4-Layer AgentDeck Model</h2>
+      <p class="lead">Every working agent — a $29/mo receptionist or a Fortune 500 support bot — is just four layers stacked. Miss one and it breaks. Master all four and it runs forever.</p>
+    </div>
+    <div class="grid g4">
+      <div class="card"><span class="ic">🎯</span><h3>1. The Job</h3><p>One agent, one job. We help you score 10 candidates across 5 axes and pick the single job your agent does so well you'd pay for it yourself.</p></div>
+      <div class="card"><span class="ic">🧠</span><h3>2. The Brain</h3><p>Your prompt contract + grounding pack. Six files that make your agent answer from <i>your</i> reality — never a confident hallucination.</p></div>
+      <div class="card"><span class="ic">🔌</span><h3>3. The Trigger</h3><p>Schedule, webhook, email or chat. Pick the simplest trigger that works, add a heartbeat so silent failures can't hide, and let it run unattended.</p></div>
+      <div class="card"><span class="ic">🛡️</span><h3>4. The Guardrails</h3><p>Spend caps, approve-first mode, a kill switch, and an audit log. Autonomy you can actually sleep through — installed before you ship, not after.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAND -->
+<section class="proofband">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="n">$29/mo</div><div class="l">What the market pays for a single agent service</div></div>
+      <div class="stat"><div class="n">$1.5–5K</div><div class="l">What agencies charge to build one agent</div></div>
+      <div class="stat"><div class="n">~$10/mo</div><div class="l">What yours costs to run — same result</div></div>
+      <div class="stat"><div class="n">1 weekend</div><div class="l">From zero to a live, guarded agent</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section id="inside">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:40px;">
+      <span class="eyebrow">What's inside</span>
+      <h2>The 8-Deliverable AgentDeck™ System</h2>
+      <p class="lead">Not a motivational ebook. A complete build system: core guide, worksheets, cheatsheets, templates and trackers — everything you need to ship.</p>
+    </div>
+    <table>
+      <thead><tr><th>Deliverable</th><th>What you get</th><th>Use it to</th></tr></thead>
+      <tbody>
+        <tr><td>🃏 <b>1. The AgentDeck System</b></td><td>The core guide: 4-layer model, the 7-day build, the economics of agents</td><td>Understand the whole picture in 10 minutes</td></tr>
+        <tr><td>🎯 <b>2. The Job Scorecard</b></td><td>Worksheet to score 10 candidate jobs on 5 axes + 3 hard filters</td><td>Pick the ONE job your agent does</td></tr>
+        <tr><td>🧠 <b>3. The Grounding Pack</b></td><td>The 6 files every agent needs + the "citation or silence" rule</td><td>Make it answer from your reality, not guesses</td></tr>
+        <tr><td>📜 <b>4. The Prompt Contract</b></td><td>Fill-in prompt template + a 20-attack Adversarial Test Sheet</td><td>Build a brain that doesn't drift, and prove it</td></tr>
+        <tr><td>⏰ <b>5. The Trigger Map</b></td><td>Cron/webhook/email/chat decision tree + dead-man's-switch heartbeat</td><td>Make it wake up and run on its own</td></tr>
+        <tr><td>🛡️ <b>6. Guardrails &amp; Safeguards</b></td><td>Spend caps, approve-first mode, kill switch, risk ladder, compliance lines</td><td>Sleep without fear</td></tr>
+        <tr><td>📊 <b>7. The Receipt Tracker</b></td><td>Run log, weekly scorecard, the 10-run trust gate, incident log</td><td>Prove it ran — then improve it</td></tr>
+        <tr><td>🧰 <b>8. The AgentDeck Playbook</b></td><td>Templates, copy-paste scripts, starter code, 30-day roadmap, first-client play</td><td>Ship today — and optionally get paid</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:36px;">
+      <span class="eyebrow">The honest comparison</span>
+      <h2>Hire an agency, or learn the deck?</h2>
+    </div>
+    <div class="compare">
+      <div class="them">
+        <h3>❌ The agency route</h3>
+        <ul>
+          <li>$1,500–$5,000 build fee</li>
+          <li>$50–$150/mo forever to "maintain"</li>
+          <li>6–10 week wait for a working agent</li>
+          <li>You never learn how it works</li>
+          <li>You can't fix or extend it yourself</li>
+          <li>Every change is another invoice</li>
+        </ul>
+      </div>
+      <div class="us">
+        <h3>✅ The AgentDeck™ route</h3>
+        <ul>
+          <li>$19 one-time, keep everything</li>
+          <li>~$5–40/mo in real running costs</li>
+          <li>A live agent by Monday</li>
+          <li>You understand and control every layer</li>
+          <li>Extend it yourself in minutes</li>
+          <li>Optional: charge clients the agency price</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="wrap">
+    <div class="center" style="margin-bottom:40px;">
+      <span class="eyebrow">How it works</span>
+      <h2>From "AI-curious" to a live agent — in 4 moves</h2>
+    </div>
+    <div class="grid g4">
+      <div class="card"><div class="stepnum">1</div><h3>Read (10 min)</h3><p>The AgentDeck System hands you the 4-layer model and the 7-day build plan. No jargon, no fluff.</p></div>
+      <div class="card"><div class="stepnum">2</div><h3>Pick (60 min)</h3><p>Score your repetitive work with the Job Scorecard and choose the single highest-value job.</p></div>
+      <div class="card"><div class="stepnum">3</div><h3>Build (weekend)</h3><p>Write the Prompt Contract, assemble the Grounding Pack, and wire the Trigger. Copy-paste templates included.</p></div>
+      <div class="card"><div class="stepnum">4</div><h3>Ship (same day)</h3><p>Set guardrails, run the 20 adversarial tests, deploy in draft mode, and track every receipt.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:36px;">
+      <span class="eyebrow">Early builders</span>
+      <h2>What early readers are saying</h2>
+    </div>
+    <div class="grid g3">
+      <div class="quote"><div class="stars">★★★★★</div><p>"I'd been 'planning' to use AI agents for a year. Scored my jobs on a Sunday, had an inbox-drafting agent live before dinner. It pays for itself weekly."</p><div class="who">— Marco D., freelance consultant</div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"The guardrails chapter alone is worth the price. The spend cap saved me from my own runaway loop on day one."</p><div class="who">— Priya S., e-commerce owner</div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"I charged my first client $500 setup using this exact playbook. The Receipt Tracker is what won them over — I showed them 30 days of proof."</p><div class="who">— Tom R., solo dev</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="narrow">
+    <div class="center" style="margin-bottom:34px;">
+      <span class="eyebrow">Objections, answered</span>
+      <h2>Everything you're probably wondering</h2>
+    </div>
+
+    <details><summary>Do I need to know how to code?</summary><p>No. The system is built for no-code and low-code deployment. The starter scripts are copy-paste, and the whole point is defining the <i>job</i> and <i>guardrails</i> — not writing software.</p></details>
+    <details><summary>I'm not technical at all. Is this over my head?</summary><p>If you can follow a recipe and copy text into a field, you can do this. Every technical concept is explained in plain English, and the worksheets walk you through it step by step.</p></details>
+    <details><summary>What does it actually cost to run an agent?</summary><p>Most solo agents run for $5–$40/month in hosting and model credits — many under $20. The system shows you exactly how to cap spend so it can never surprise you.</p></details>
+    <details><summary>How long until I have a working agent?</summary><p>You can ship a draft-mode agent in one weekend. The 90-minute starter build gets you from zero to running; hardening and promotion take the following weeks.</p></details>
+    <details><summary>What if my agent does something wrong or embarrassing?</summary><p>That's exactly what the Guardrails deliverable prevents. You run in draft mode (human approves before it sends) until you've logged 10 clean runs. The risk ladder means you never hand over more autonomy than you've earned confidence for.</p></details>
+    <details><summary>Is this just a thin PDF with fluff?</summary><p>No. It's 8 substantive deliverables: a core guide, two workbooks, a cheatsheet set, prompt/template assets and two trackers — including a 20-attack test sheet and copy-paste starter code. Real tools you'll use, not motivation.</p></details>
+    <details><summary>Will this be obsolete in 6 months?</summary><p>The <i>tools</i> change fast; the <i>method</i> doesn't. Job definition, grounding, triggers and guardrails are the durable skills. The system teaches the pattern, so you can swap tools as the market shifts.</p></details>
+    <details><summary>Can I use this to make money, not just save time?</summary><p>Yes — Deliverable 8 includes the exact play to package your build for local businesses at $300–$800 setup + $50–$150/month. Two clients a month is a real side income.</p></details>
+    <details><summary>What if it's not for me?</summary><p>You're covered by a 60-day, no-questions-asked guarantee. Email us, get a full refund, and keep everything. Zero risk.</p></details>
+    <details><summary>How do I get the files?</summary><p>Instantly after checkout you'll get an email with your personal access code. Enter it on the download page and unlock all 8 PDFs immediately.</p></details>
+    <details><summary>Is this affiliated with any AI company?</summary><p>No. AgentDeck is an independent educational system. You choose your own tools and providers; we teach the deployment method.</p></details>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section id="offer" style="background:radial-gradient(900px 420px at 50% 0%,rgba(91,141,239,.14),transparent 60%),var(--bg2);border-top:1px solid var(--line);">
+  <div class="narrow">
+    <div class="offer">
+      <span class="eyebrow">Founder pricing — today only</span>
+      <h2>Get The AgentDeck™ Launch System</h2>
+      <p style="margin-bottom:26px;">The complete 8-deliverable build system. Instant access. Yours forever.</p>
+      <div><span class="was">$97</span><span class="price">$19</span></div>
+      <p class="micro" style="margin-top:10px;">One-time payment · no subscription · everything included</p>
+
+      <div class="val">
+        <div><span>🃏 The AgentDeck System (core guide)</span><span>$27</span></div>
+        <div><span>🎯 The Job Scorecard + worksheets</span><span>$19</span></div>
+        <div><span>🧠 The Grounding Pack builder</span><span>$19</span></div>
+        <div><span>📜 The Prompt Contract + 20 tests</span><span>$19</span></div>
+        <div><span>⏰ The Trigger Map + heartbeat</span><span>$14</span></div>
+        <div><span>🛡️ Guardrails &amp; Safeguards checklist</span><span>$19</span></div>
+        <div><span>📊 The Receipt Tracker</span><span>$14</span></div>
+        <div><span>🧰 The Playbook + starter code</span><span>$27</span></div>
+        <div><span>Total real value</span><span>$158</span></div>
+      </div>
+
+      <a class="btn" href="#" data-cta style="width:100%;max-width:420px;">Yes — Send Me The System For $19 →</a>
+      <div class="guarantee">🛡️ <b>60-Day "Peace of Mind" Guarantee.</b> If you don't deploy a working agent or you simply change your mind, email us within 60 days for a full refund — and keep everything.</div>
+      <p class="micro">Secure checkout · Instant delivery by email · Works on any device</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+  <div class="narrow center">
+    <h2>The agents are hiring.<br>Be the one who hires them first.</h2>
+    <p class="lead" style="margin-bottom:30px;">This weekend you can either watch another "AI is changing everything" video — or you can have a working agent running your business while you sleep. One is a scroll. The other is a business.</p>
+    <a class="btn" href="#offer" data-cta>Get The AgentDeck™ System — $19 →</a>
+    <p class="micro">60-day guarantee · instant access · 8 real deliverables</p>
+  </div>
+</section>
+
+<p class="disclaimer">AgentDeck™ is an independent educational product. It is not affiliated with, endorsed by, or sponsored by any AI provider or platform mentioned. Results depend on your effort and use; examples are illustrative. You are solely responsible for the actions, outputs and compliance of any agent you deploy. No income is guaranteed.</p>
+
+<footer>
+  <div class="wrap">
+    🃏 AgentDeck™ · The AgentDeck™ Launch System · © 2026 · <a href="/thank-you.html">Order status</a>
+  </div>
+</footer>
+
+<div class="sticky">
+  <div class="t">🃏 AgentDeck™ Launch System — <b>$19</b> today <span style="color:#5d6b8a;text-decoration:line-through;margin-left:6px;">$97</span></div>
+  <a class="btn" href="#offer" data-cta>Get it now →</a>
+</div>
+
+<script>
+// Wire every CTA to the Stripe payment link (injected at deploy time)
+(function(){
+  var PAYLINK = window.AGENTDECK_PAYLINK || "";
+  document.querySelectorAll('[data-cta]').forEach(function(a){
+    if (PAYLINK) { a.href = PAYLINK; a.target = "_blank"; a.rel = "noopener"; }
+    else { a.href = "#offer"; }
+  });
+})();
+</script>
+</body>
+</html>
