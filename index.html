@@ -343,7 +343,7 @@
 <script>
 // Wire every CTA to the Stripe payment link (injected at deploy time)
 (function(){
-  var PAYLINK = window.AGENTDECK_PAYLINK || "";
+  var PAYLINK = window.AGENTDECK_PAYLINK || "https://buy.stripe.com/test_eVq6oI8765x17PFcth1Nu0u";
   document.querySelectorAll('[data-cta]').forEach(function(a){
     if (PAYLINK) { a.href = PAYLINK; a.target = "_blank"; a.rel = "noopener"; }
     else { a.href = "#offer"; }
